@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Todo } from "../model";
 import { GrEdit } from "react-icons/gr";
 import { MdDone, MdDeleteForever } from "react-icons/md";
 import "./styles.css";
-import TodoList from "./TodoList";
+
 type Props = {
   todo: Todo;
   todos: Todo[];
@@ -32,11 +32,18 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
     );
     setEdit(false);
   };
+  // we use the useRef hook and useEffect so that when you click the edit icon (i.e. everytime the edit changes), the edit input is automatically focused/selected i.e. without the user having to manually click in the box before typing.
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, [edit]);
 
   return (
     <form className="todos__single" onSubmit={(e) => handleEdit(e, todo.id)}>
       {edit ? (
         <input
+          ref={inputRef}
           value={editTodo}
           onChange={(e) => setEditTodo(e.target.value)}
           className="todos__single--text"

@@ -30,14 +30,14 @@
   border: none;
   font-size: 20px;
   font-weight: 500;
-  background-color: #b42121;
-  color: white;
+  background-color: #41b3a3;
+  color: black;
   transition: 0.2s all;
   box-shadow: 0 0 10px black;
 }
 
 .input__submit:hover {
-  background-color: #e25151;
+  background-color: #e27d60;
 }
 
 .input_submit:active {
@@ -47,8 +47,45 @@
 
 .todos {
   display: flex;
-  flex-direction: column;
-  width: 47.5%;
-  padding: 15px;
-  background-color: rgb(146, 124, 124);
+  justify-content: space-evenly;
+  width: 90%;
+  flex-wrap: wrap;
+}
+
+.todos__single {
+  display: flex;
+  width: 29.5%;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+
+  background-color: rgba(65, 179, 163, 0.8);
+}
+.todos__single--text {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+.todos__single--text:focus {
+  outline: none;
+}
+
+.icon {
+  margin-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .input {
+    width: 95%;
+  }
+  .todos {
+    width: 95%;
+  }
+  .todos__single {
+    width: 100%;
+  }
 }

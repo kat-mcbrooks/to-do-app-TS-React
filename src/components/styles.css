@@ -87,7 +87,7 @@
   flex: 1;
   padding: 5px;
   border: none;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .todos__single--text:focus {

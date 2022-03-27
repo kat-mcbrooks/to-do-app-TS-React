@@ -45,21 +45,43 @@
   box-shadow: 0 0 5px black;
 }
 
+.container {
+  width: 95%;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .todos {
   display: flex;
-  justify-content: space-evenly;
-  width: 90%;
-  flex-wrap: wrap;
+  flex-direction: column;
+  width: 47%;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgba(65, 179, 163, 0.8);
+}
+.remove {
+  background-color: #659dbd;
+}
+.todos__heading {
+  font-size: 30px;
+  color: white;
 }
 
 .todos__single {
   display: flex;
-  width: 29.5%;
+
   border-radius: 5px;
   padding: 20px;
   margin-top: 15px;
-
-  background-color: rgba(65, 179, 163, 0.8);
+  /* background-color: #c38d9e; */
+  background-color: #e8a87c;
+  transition: 0.2s; /*transition of 0.2 seconds*/
+}
+.todos__single:hover {
+  box-shadow: 0 0 5px black;
+  transform: scale(1.03);
 }
 .todos__single--text {
   flex: 1;
@@ -77,6 +99,12 @@
   font-size: 25px;
   cursor: pointer;
 }
+/* when screen is smaller than 1100px, we want todos with width 45% */
+@media (max-width: 1100px) {
+  .todos {
+    width: 45%;
+  }
+}
 
 @media (max-width: 700px) {
   .input {
@@ -84,8 +112,10 @@
   }
   .todos {
     width: 95%;
+    margin-bottom: 10px;
   }
-  .todos__single {
-    width: 100%;
+  .container {
+    width: 95%;
+    flex-direction: column;
   }
 }

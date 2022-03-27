@@ -99,6 +99,18 @@
   font-size: 25px;
   cursor: pointer;
 }
+
+.dragactive {
+  background-color: rgb(13, 82, 59);
+}
+
+.dragcomplete {
+  background-color: rgb(15, 62, 105);
+}
+.drag {
+  box-shadow: 0 0 20px black;
+}
+
 /* when screen is smaller than 1100px, we want todos with width 45% */
 @media (max-width: 1100px) {
   .todos {
